@@ -3,7 +3,9 @@ function(doc, req) {
   // !code vendor/couchapp/template.js
 
   return tmpl(templates.storycard,{
-    title: "sdsd"
+    number: "1",
+    title: "sdsd",
+    description: "Eine Beschreibung muss sein"
   });
 
 }

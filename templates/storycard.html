@@ -2,10 +2,63 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Story: <%= title %></title>
+<style type="text/css">
+table.card {table-layout: fixed; border-width:1px; border-style:solid;}
+td.nr-head {width:40px; border-width:1px; border-style:solid;} 
+td.nr {border-width:1px; border-style:solid;}
+td.title-head {width:580px; border-width:1px; border-style:solid;}
+td.title {border-width:1px; border-style:solid;}
+td.story {border-width:1px; border-style:solid;}
+td.add-head {width:40px; border-width:1px; border-style:solid;}
+td.add-cont {border-width:1px; border-style:solid;}
+</style>
+<title>Story <%= number %>: <%= title %></title>
 </head>
-
 <body>
+<table class="card">
+
+  <tr class="explain"">
+    <td class="nr-head">Nummer</td>
+    <td class="title-head" colspan="2">Titel</td>
+  </tr>
+
+  <tr>
+    <td class="nr"><%= number %></td>
+    <td class="title" colspan="2"><%= title %></td>
+  </tr>
+
+  <tr>
+    <td class="story" colspan="2" rowspan="8"><%= description %></td>
+    <td class="add-head">Komplexität</td>
+  </tr>
+
+  <tr>
+    <td class="add-cont">13</td>
+  </tr>
+
+  <tr>
+    <td class="add-head">Priorität</td>
+  </tr>
+
+  <tr>
+    <td class="add-cont">3</td>
+  </tr>
+
+  <tr>
+    <td class="add-head">Autor</td>
+  </tr>
+
+  <tr>
+    <td class="add-cont">Bernd</td>
+  </tr>
+  <tr>
+    <td class="add-head">Erstellt am</td>
+  </tr>
+  <tr>
+    <td class="add-cont">13.04.2013</td>
+  </tr>
+</table>
+</table>
 </body>
 </html>
 
