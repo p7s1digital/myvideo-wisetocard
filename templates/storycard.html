@@ -10,50 +10,42 @@ td.title-head {width:280px; border-width:0px; border-style:solid; font-variant:s
 td.title {border-width:0px; border-style:solid; font-weight:bold; }
 td.story {height: 300px; width:220px; border-width:1px; border-style:solid; padding:5px; }
 td.story div {height: 300px; overflow:hidden;}
-td.add-head {width:40px; border-width:0px; border-style:solid; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline; }
+td.add-head {width:80px; border-width:0px; border-style:solid; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline; }
 td.add-cont {border-width:0px; border-style:solid;}
 </style>
 <title>Story <%= number %>: <%= title %></title>
 </head>
 <body>
 <table class="card">
-
   <tr class="explain"">
     <td class="nr-head">Nummer</td>
     <td class="title-head" colspan="2">Titel</td>
   </tr>
-
   <tr>
     <td class="nr"><%= number %></td>
     <td class="title" colspan="2"><%= title %></td>
   </tr>
-
   <tr>
     <td class="story" colspan="2" rowspan="9"><div><%= description %></div></td>
     <td class="add-head">Komplexität</td>
   </tr>
-
   <tr>
     <td class="add-cont"><%= complexity %></td>
   </tr>
-
   <tr>
-    <td class="add-head">Priorität</td>
+    <td class="add-head">Businessvalue</td>
   </tr>
-
   <tr>
-    <td class="add-cont"><%= priority %></td>
+    <td class="add-cont"><%= businessvalue %></td>
   </tr>
-
   <tr>
     <td class="add-head">Autor</td>
   </tr>
-
   <tr>
     <td class="add-cont"><%= author %></td>
   </tr>
   <tr>
-    <td class="add-head">Gedruckt am</td>
+    <td class="add-head">Gedruckt</td>
   </tr>
   <tr>
     <td class="add-cont"><%= printed %></td>
