@@ -18,7 +18,7 @@ function(doc, req) {
       var item = doc.content.result.projects[0].backlogItems[itemKey];
   
       return tmpl(templates.storycard,{
-        number: item.Number,
+        number: item.itemNumber,
         title: item.name,
         description: item.description
       });
