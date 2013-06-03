@@ -4,13 +4,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
 table.card {table-layout: fixed; border-width:1px; border-style:solid;}
-td.nr-head {width:40px; border-width:1px; border-style:solid;} 
-td.nr {border-width:1px; border-style:solid;}
-td.title-head {width:580px; border-width:1px; border-style:solid;}
-td.title {border-width:1px; border-style:solid;}
-td.story {border-width:1px; border-style:solid;}
-td.add-head {width:40px; border-width:1px; border-style:solid;}
-td.add-cont {border-width:1px; border-style:solid;}
+td.nr-head {width:40px; border-width:0px; border-style:solid; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline; } 
+td.nr {border-width:0px; border-style:solid;}
+td.title-head {width:280px; border-width:0px; border-style:solid; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline;  }
+td.title {border-width:0px; border-style:solid;}
+td.story {height: 240px; width:220px; border-width:1px; border-style:solid;}
+td.add-head {width:40px; border-width:0px; border-style:solid; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline; }
+td.add-cont {border-width:0px; border-style:solid;}
 </style>
 <title>Story <%= number %>: <%= title %></title>
 </head>
@@ -28,7 +28,7 @@ td.add-cont {border-width:1px; border-style:solid;}
   </tr>
 
   <tr>
-    <td class="story" colspan="2" rowspan="8"><%= description %></td>
+    <td class="story" colspan="2" rowspan="9"><%= description %></td>
     <td class="add-head">Komplexität</td>
   </tr>
 
@@ -56,6 +56,9 @@ td.add-cont {border-width:1px; border-style:solid;}
   </tr>
   <tr>
     <td class="add-cont">13.04.2013</td>
+  </tr>
+  <tr>
+    <td class="add-cont">&nbsp;</td>
   </tr>
 </table>
 </table>

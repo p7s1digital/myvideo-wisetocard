@@ -2,10 +2,30 @@ function(doc, req) {
   // !json templates.storycard
   // !code vendor/couchapp/template.js
 
-  return tmpl(templates.storycard,{
-    number: "1",
-    title: "sdsd",
-    description: "Eine Beschreibung muss sein"
-  });
+  
+  if (doc.content.result.projects[0].backlogItems) {
 
+    var itemKey = null;
+
+    for(var idx in doc.content.result.projects[0].backlogItems) {
+      if(doc.content.result.projects[0].backlogItems[idx].itemNumber == req.query.item) {
+        itemKey = idx;
+        break;
+      }
+    }
+
+    if (itemKey != null) {  
+      var item = doc.content.result.projects[0].backlogItems[itemKey];
+  
+      return tmpl(templates.storycard,{
+        number: item.Number,
+        title: item.name,
+        description: item.description
+      });
+    } else {
+      return "No item with the key you entered was found";
+    }
+  } else {
+    return "No Backlog Items found"
+  }
 }
