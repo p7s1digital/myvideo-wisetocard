@@ -1,4 +1,18 @@
 #!/usr/bin/ruby
+
+# Script to write the data of a Scrumwise project into a local CouchDB, implemented from 
+# the wisetocard project
+# additional to the sync all creator information is updated, if a matching entry can be
+# found in the usermap document in the same database
+# 
+# a config yaml file needs be be place to ~/wisetocard.yml with content like
+# ---8<----
+# scrumwise:
+#   username: mail@host.com
+#   key: keyfromprojectsettings
+# ---8<----
+#
+
 begin
   require 'httpclient'
   require 'logger'
@@ -34,6 +48,7 @@ begin
   revision = couch_data["_rev"]
   log.debug("Revsion: #{revision}")
 
+  # Couch DB needs to know the revision of the document we are updating, so let´s write it into the JSON
   orig_data.sub!('{', '{"_rev":"'+revision+'", ')
 
   usermap.each do |key, value|
