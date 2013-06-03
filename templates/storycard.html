@@ -8,7 +8,7 @@ td.nr-head {width:40px; border-width:0px; border-style:solid; font-variant:small
 td.nr {border-width:0px; border-style:solid;}
 td.title-head {width:280px; border-width:0px; border-style:solid; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline;  }
 td.title {border-width:0px; border-style:solid; font-weight:bold; }
-td.story {height: 300px; width:220px; border-width:1px; border-style:solid;}
+td.story {height: 300px; width:220px; border-width:1px; border-style:solid; padding:5px; }
 td.story div {height: 300px; overflow:hidden;}
 td.add-head {width:40px; border-width:0px; border-style:solid; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline; }
 td.add-cont {border-width:0px; border-style:solid;}
@@ -34,7 +34,7 @@ td.add-cont {border-width:0px; border-style:solid;}
   </tr>
 
   <tr>
-    <td class="add-cont">13</td>
+    <td class="add-cont"><%= complexity %></td>
   </tr>
 
   <tr>
@@ -42,7 +42,7 @@ td.add-cont {border-width:0px; border-style:solid;}
   </tr>
 
   <tr>
-    <td class="add-cont">3</td>
+    <td class="add-cont"><%= priority %></td>
   </tr>
 
   <tr>
@@ -50,13 +50,13 @@ td.add-cont {border-width:0px; border-style:solid;}
   </tr>
 
   <tr>
-    <td class="add-cont">Bernd</td>
+    <td class="add-cont"><%= author %></td>
   </tr>
   <tr>
-    <td class="add-head">Erstellt am</td>
+    <td class="add-head">Gedruckt am</td>
   </tr>
   <tr>
-    <td class="add-cont">13.04.2013</td>
+    <td class="add-cont"><%= printed %></td>
   </tr>
   <tr>
     <td class="add-cont">&nbsp;</td>

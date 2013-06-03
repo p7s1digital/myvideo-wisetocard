@@ -16,11 +16,16 @@ function(doc, req) {
 
     if (itemKey != null) {  
       var item = doc.content.result.projects[0].backlogItems[itemKey];
-  
+      var pdate = new Date();
+
       return tmpl(templates.storycard,{
         number: item.itemNumber,
         title: item.name,
-        description: item.description
+        description: item.description,
+        author: "",
+        priority: item.priority,
+        complexity: item.roughEstimate,
+        printed: pdate.getDay() + "." + pdate.getMonth() + "." + pdate.getFullYear() 
       });
     } else {
       return "No item with the key you entered was found";
