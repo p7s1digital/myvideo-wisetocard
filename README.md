@@ -16,9 +16,9 @@ Installation of the Sync
 ------------------------
 
 Before starting the sync you will need to place a file called wisetocard.yml into the home directory of the user, that will run the sync. The yml should look like this:
-    scrumwise:
-      username: Bernd.Loeffeld@magicinternet.de
-      key: xxxxxxxxxxxxxxxxxx
+>scrumwise:
+>  username: Bernd.Loeffeld@magicinternet.de
+>  key: xxxxxxxxxxxxxxxxxx
 
 You will find the key in the settings of your scrumwise project. If none exists, you can just create it there 
 
