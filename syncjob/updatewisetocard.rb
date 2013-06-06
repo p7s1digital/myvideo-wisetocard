@@ -39,6 +39,10 @@ begin
   orig_data = apicl.get("https://api.scrumwise.com/service/api/v1/getData", {"includeProperties" => "Project.backlogItems,Project.comments,Project.attachments,Project.sprints,Project.tags"}).body
   log.debug("Data from Scrumwise API: #{orig_data}")
 
+  if not (orig_data.include?("projects") and orig_data.include?("dataVersion") and orig_data.include?("backlogItems") )
+    raise "The result from scrumwise does not match our expectations … sync is aborted. Content: #{orig_data}"
+  end
+
   couch_data = couchcl.get("http://localhost:5984/wisetocard/data").body
   log.debug("Data from CouchDB: #{couch_data}")
 
