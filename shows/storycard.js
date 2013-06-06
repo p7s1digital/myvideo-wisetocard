@@ -23,8 +23,8 @@ function(doc, req) {
         title: item.name,
         description: item.description.replace(/\n/g,'<br \>'),
         author: item.creatorID,
-        complexity: ((item.roughEstimate == -1) ? "<br>" : item.roughEstimate),
-        businessvalue: ((item.estimate == -1) ? "<br>" : item.estimate),
+        complexity: ((item.estimate == -1) ? "<br>" : item.estimate),
+        businessvalue: "<br>",
         printed: pdate.getDate() + "." + (pdate.getMonth() + 1) + "." + pdate.getFullYear() 
       });
     } else {
