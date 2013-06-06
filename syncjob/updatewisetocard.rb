@@ -36,7 +36,7 @@ begin
   password = config['scrumwise']['key'] 
   apicl.set_auth(nil, user, password)
 
-  orig_data = apicl.get("https://api.scrumwise.com/service/api/v1/getData", {"includeProperties" => "Project.backlogItems"}).body
+  orig_data = apicl.get("https://api.scrumwise.com/service/api/v1/getData", {"includeProperties" => "Project.backlogItems,Project.comments,Project.attachments,Project.sprints,Project.tags"}).body
   log.debug("Data from Scrumwise API: #{orig_data}")
 
   couch_data = couchcl.get("http://localhost:5984/wisetocard/data").body
