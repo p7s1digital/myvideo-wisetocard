@@ -11,6 +11,8 @@ This is an out of the box couchapp development, so prepending you have couchapp 
 
 To deploy the app to your local couch db.
 
+If you need couchapp, check [this](http://couchapp.org//)
+
 
 Installation of the Sync
 ------------------------
