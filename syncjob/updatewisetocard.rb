@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# encoding: utf-8
 
 # Script to write the data of a Scrumwise project into a local CouchDB, implemented from 
 # the wisetocard project
@@ -52,8 +53,10 @@ begin
   revision = couch_data["_rev"]
   log.debug("Revsion: #{revision}")
 
+  if (revision != nil)
   # Couch DB needs to know the revision of the document we are updating, so let´s write it into the JSON
-  orig_data.sub!('{', '{"_rev":"'+revision+'", ')
+    orig_data.sub!('{', '{"_rev":"'+revision+'", ')
+  end
 
   usermap.each do |key, value|
     unless key == "_id" or key == "_rev"
