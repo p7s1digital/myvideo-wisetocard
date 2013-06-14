@@ -4,7 +4,13 @@ function(doc) {
       for(var idx in doc.result.projects[0].backlogItems) {
         var status = doc.result.projects[0].backlogItems[idx].status;
         if(status == "New" || status == "Ready for sprint") {
-           emit(idx, doc.result.projects[0].backlogItems[idx].name);
+           item = doc.result.projects[0].backlogItems[idx];
+           emit(idx, 
+		{
+			title: item.name, 
+			description: item.description,
+			number: item.itemNumber
+		});
         }
       }
     }

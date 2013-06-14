@@ -3,11 +3,12 @@ function(head, req) {
   // !json templates.backlogitem
   // !json templates.backlogfoot
   // !code vendor/couchapp/template.js
+
   var row;
   
   start({
      "headers": {
-     "Content-Type": "text/html"
+     "Content-Type": "text/html; charset=utf-8"
      }
   });
 
@@ -15,7 +16,8 @@ function(head, req) {
 
   while(row = getRow()) {
     var itemcode = tmpl(templates.backlogitem, {
-      title: row.value
+      title: row.value.title,
+      number: row.value.number
     });
     send(itemcode);
   }  
