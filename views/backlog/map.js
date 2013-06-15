@@ -9,7 +9,8 @@ function(doc) {
 		{
 			title: item.name, 
 			description: item.description,
-			number: item.itemNumber
+			number: item.itemNumber,
+			complexity: ((item.roughEstimate == -1) ? "<br>" : item.roughEstimate),
 		});
         }
       }
