@@ -1,9 +1,28 @@
-<div class="itemblock">
-<div class="title"><%= title %></div>
-<div class="complexity"><%= complexity %></div>
-<div class="card"><a href="../../_show/storycard/data?item=<%= number %>">Print</a></div>
+
+<div class="row">
+	<div class="row">
+		<h4 class="lead"><%= number %>: <%= title %></h4>
+	</div>
+	<div class="row"><hr></div>
+	<div class="row">
+		<div class="one columns"  align="center">
+			<div class="row">
+				<ul>
+					<li><i class="primary badge"><%=
+							complexity %></i></li>
+				</ul>
+			</div>
+			<div class="row">
+				<ul>
+					<li><i class="icon-print"></i></li>
+				</ul>
+			</div>
+		</div>
+		<div class="eight columns">
+			<p><%= description %></p>
+		</div>
+	</div>
 </div>
-<br/>
-<br/>
-
-
+<div class="row">
+&nbsp;
+</div>

@@ -18,7 +18,8 @@ function(head, req) {
     var itemcode = tmpl(templates.backlogitem, {
       title: row.value.title,
       number: row.value.number,
-      complexity: row.value.complexity
+      complexity: row.value.complexity,
+      description: row.value.description
     });
     send(itemcode);
   }  

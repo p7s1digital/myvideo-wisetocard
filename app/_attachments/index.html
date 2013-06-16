@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Example CouchApp</title>
-    <link rel="stylesheet" href="style/main.css" type="text/css">
-  </head>
-  <body>
-    <div id="account"></div>
+<head>
+<title>Example CouchApp</title>
+<link rel="stylesheet" href="style/main.css" type="text/css">
+<link rel="stylesheet" href="style/gumby.css" type="text/css">
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
 
-    <h1>Example CouchApp</h1>
 
-    <div id="profile">
-    </div>
-    <div id="content"></div>
+	<div id="account"></div>
 
-    <div id="sidebar">
-      <p>Edit welcome message.</p>
-      <p>Ideas: You could easily turn this into a photo sharing app, 
-          or a grocery list, or a chat room. <a href="https://github.com/couchapp/example">Code for this app is on Github.</a></p>
-    </div>
-  </body>
-  <script src="/_utils/script/sha1.js"></script>
-  <script src="/_utils/script/json2.js"></script>
-  <script src="/_utils/script/jquery.js"></script>
-  <script src="/_utils/script/jquery.couch.js"></script>
-  <script src="vendor/couchapp/jquery.couchLogin.js"></script>
-  <script src="vendor/couchapp/jquery.couchProfile.js"></script>
-  <script src="vendor/couchapp/md5.js"></script>
-  <script src="vendor/couchapp/jquery.mustache.js"></script>
+	<h1>Example CouchApp</h1>
+
+	<div id="profile"></div>
+	<div id="content"></div>
+
+	<div id="sidebar">
+		<p>Edit welcome message.</p>
+		<p>
+			Ideas: You could easily turn this into a photo sharing app, or a
+			grocery list, or a chat room. <a
+				href="https://github.com/couchapp/example">Code for this app is
+				on Github.</a>
+		</p>
+	</div>
+</body>
+<script src="/_utils/script/sha1.js"></script>
+<script src="/_utils/script/json2.js"></script>
+<script src="/_utils/script/jquery.js"></script>
+<script src="/_utils/script/jquery.couch.js"></script>
+<script src="vendor/couchapp/jquery.couchLogin.js"></script>
+<script src="vendor/couchapp/jquery.couchProfile.js"></script>
+<script src="vendor/couchapp/md5.js"></script>
+<script src="vendor/couchapp/jquery.mustache.js"></script>
 
 <!-- templates used by app.js -->
-  <script id="new-message" type="text/x-mustache" charset="utf-8">
+<script id="new-message" type="text/x-mustache" charset="utf-8">
       <div class="avatar">
         {{#gravatar_url}}<img src="{{gravatar_url}}"/>{{/gravatar_url}}
         <div class="name">
@@ -42,7 +49,7 @@
       <div style="clear:left;"></div>
   </script>
 
-  <script id="recent-messages" type="text/x-mustache" charset="utf-8">
+<script id="recent-messages" type="text/x-mustache" charset="utf-8">
         <h3>Recent Messages</h3>
         <ul id="items">
           {{#items}}
@@ -61,6 +68,6 @@
         <p><em>Protip:</em> If you setup continuous replication between this database and a remote one, this list will reflect remote changes in near real-time.</p>
         <p>This would be a good place to add pagination.</p>
   </script>
-  <script src="script/app.js"></script>
+<script src="script/app.js"></script>
 
 </html>
