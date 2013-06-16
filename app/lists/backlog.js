@@ -19,7 +19,8 @@ function(head, req) {
       title: row.value.title,
       number: row.value.number,
       complexity: row.value.complexity,
-      description: row.value.description
+      description: row.value.description,
+      author: row.value.author
     });
     send(itemcode);
   }  
