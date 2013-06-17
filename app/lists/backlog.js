@@ -1,7 +1,7 @@
 function(head, req) {
-  // !json templates.backloghead
+  // !json templates.headtemplate
   // !json templates.backlogitem
-  // !json templates.backlogfoot
+  // !json templates.foottemplate
   // !code vendor/couchapp/template.js
 
   var row;
@@ -12,7 +12,7 @@ function(head, req) {
      }
   });
 
-  send(templates.backloghead);
+  send(templates.headtemplate);
 
   var idx = 1;
   while(row = getRow()) {
@@ -28,5 +28,5 @@ function(head, req) {
     idx++;
   }  
 
-  send(templates.backlogfoot);
+  send(templates.foottemplate);
 }
