@@ -1,7 +1,17 @@
 
 <div class="row">
 	<div class="row">
-		<h4 class="lead"><%= number %>: <%= title %></h4>
+		<div class="one columns" align="center">
+			<h4 class="lead"><%= number %></h4>
+		</div>
+		<div class="ten columns">
+			<h4 class="lead"><%= title %></h4>
+		</div>
+		<div class="one columns">
+		<p class="skiplink medium default">
+			<a href="#" gumby-goto="top"><i class="icon-up-open-big"></i></a>
+		</p>
+		</div>
 	</div>
 	<div class="row">
 		<hr>
@@ -26,9 +36,11 @@
 				<p><%= description %></p>
 			</div>
 			<div class="row" align="right">
-				<p><%= author %><i class="icon-user"></i></p>
+				<p>
+					<%= author %><i class="icon-user"></i>
+				</p>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="row">&nbsp;</div>
+<div class="row"><br/></div>
