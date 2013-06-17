@@ -22,6 +22,7 @@ function(head, req) {
       complexity: row.value.complexity,
       description: row.value.description,
       author: row.value.author,
+      orderTypeClass : 'secondary badge',
       orderNumber: idx
     });
     send(itemcode);

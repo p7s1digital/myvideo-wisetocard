@@ -22,7 +22,8 @@ function(head, req) {
       complexity: row.value.complexity,
       description: row.value.description,
       author: row.value.author,
-      orderNumber: ''
+      orderTypeClass : 'dark label',
+      orderNumber: row.value.sprintNumber
     });
     send(itemcode);
     idx++;
