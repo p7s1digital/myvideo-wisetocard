@@ -23,7 +23,8 @@ function(head, req) {
       description: row.value.description,
       author: row.value.author,
       orderTypeClass : 'dark label',
-      orderNumber: row.value.sprintNumber
+      orderNumber: row.value.sprintNumber,
+      comments : getCommentsmarkup(row)
     });
     send(itemcode);
     idx++;
@@ -31,3 +32,20 @@ function(head, req) {
 
   send(templates.foottemplate);
 }
+
+
+function getCommentsmarkup(row) {
+	  // !json templates.comment
+	  // !code vendor/couchapp/template.js
+		
+		var result = '';
+		
+		for (var idx in row.value.comments) {
+			result = result + tmpl(templates.comment,{
+				value : row.value.comments[idx].value,
+				author: row.value.comments[idx].author
+			});
+		}
+		
+		return result;
+	}

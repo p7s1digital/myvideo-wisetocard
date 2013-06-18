@@ -37,17 +37,16 @@ function(head, req) {
 }
 
 function getCommentsmarkup(row) {
-  // !json templates.comment
-  // !code vendor/couchapp/template.js
-	
-	var result = '';
-	
-	for (var idx in row.value.comments) {
-		result = result + tmpl(templates.comment,{
-			value : row.value.comments[idx].value,
-			author: row.value.comments[idx].author
-		});
-	}
-	
-	return result;
-}
+	  // !json templates.comment
+	  // !code vendor/couchapp/template.js
+		
+		var result = '';
+		
+		for (var idx in row.value.comments) {
+			result = result + tmpl(templates.comment,{
+				value : row.value.comments[idx].value,
+				author: row.value.comments[idx].author
+			});
+		}
+		
+		return result;
