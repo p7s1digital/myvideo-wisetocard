@@ -31,12 +31,12 @@ function emitStoriesInStates(doc, states) {
 					
 					emit(formatNumber(idx, 5), {
 						title : item.name,
-						description : item.description,
+						description : item.description.replace(/\n/g,'<br \>'),
 						number : item.itemNumber,
 						complexity : ((item.roughEstimate == -1) ? "<br>"
 								: item.roughEstimate),
 						author : item.creatorID,
-						sprintNumber : sprintname ? sprintname.substring(7) : 0
+						sprintNumber : sprintname ? sprintname : 'No Sprint'
 					});
 				}
 			}

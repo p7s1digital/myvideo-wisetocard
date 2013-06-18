@@ -1,5 +1,5 @@
 function(doc) {
 // !code vendor/scripts/utils.js
-  emitStoriesInStates(doc, ["New","Ready for sprint"]);
+  emitStoriesInStates(doc, ["New","Ready for sprint", "Ready for estimation"]);
 }
 

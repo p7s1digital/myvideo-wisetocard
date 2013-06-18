@@ -37,7 +37,7 @@ begin
   password = config['scrumwise']['key'] 
   apicl.set_auth(nil, user, password)
 
-  orig_data = apicl.get("https://api.scrumwise.com/service/api/v1/getData", {"includeProperties" => "Project.backlogItems,Project.comments,Project.attachments,Project.sprints,Project.tags"}).body
+  orig_data = apicl.get("https://api.scrumwise.com/service/api/v1/getData", {"includeProperties" => "Project.backlogItems,BacklogItem.comments,Project.sprints,Project.tags"}).body
   log.debug("Data from Scrumwise API: #{orig_data}")
 
   if not (orig_data.include?("projects") and orig_data.include?("dataVersion") and orig_data.include?("backlogItems") )

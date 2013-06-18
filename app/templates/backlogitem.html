@@ -1,10 +1,10 @@
 
 <div class="row">
 	<div class="row">
-		<div class="one columns" align="center">
+		<div class="two columns" align="center">
 			<h4 class="lead"><%= number %></h4>
 		</div>
-		<div class="ten columns">
+		<div class="nine columns">
 			<h4 class="lead"><%= title %></h4>
 		</div>
 		<div class="one columns">
@@ -17,7 +17,7 @@
 		<hr>
 	</div>
 	<div class="row">
-		<div class="one columns" align="center">
+		<div class="two columns" align="center">
 			<div class="row">
 				<ul>
 					<li><i class="<%= orderTypeClass %>"><%= orderNumber %></i></li>
@@ -32,9 +32,17 @@
 				</ul>
 			</div>
 		</div>
-		<div class="eleven columns">
+		<div class="ten columns">
 			<div class="row">
 				<p><%= description %></p>
+			</div>
+			<div class="row">
+				<div class="one columns" id="commentToggler-<%= number %>" style="cursor: pointer;">
+				<p class="skiplink medium default">Kommentare</p>
+				</div>
+			</div>
+			<div class="row" id="comments-<%= number %> style="display: none">
+				Kommentare kommen noch
 			</div>
 			<div class="row" align="right">
 				<p>
