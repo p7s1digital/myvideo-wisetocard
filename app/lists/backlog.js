@@ -50,3 +50,4 @@ function getCommentsmarkup(row) {
 		}
 		
 		return result;
+}
