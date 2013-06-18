@@ -8,8 +8,8 @@
 <script src="/_utils/script/jquery.js?1.6.2"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-	$("#commentToggler").click(function() {
-		$("#comments").slideToggle("slow");
+	$(".commentToggler").click(function() {
+		$(this).parent().next('div:first').slideToggle("fast");
 	});
 });
 </script>
