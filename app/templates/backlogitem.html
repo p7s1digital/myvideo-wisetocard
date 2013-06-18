@@ -8,9 +8,9 @@
 			<h4 class="lead"><%= title %></h4>
 		</div>
 		<div class="one columns">
-		<p class="skiplink small default">
-			<a href="#" gumby-goto="top"><i class="icon-up-open-big"></i></a>
-		</p>
+			<p class="skiplink small default">
+				<a href="#" gumby-goto="top"><i class="icon-up-open-big"></i></a>
+			</p>
 		</div>
 	</div>
 	<div class="row">
@@ -37,12 +37,13 @@
 				<p><%= description %></p>
 			</div>
 			<div class="row">
-				<div class="one columns commentToggler" id="commentToggler-<%= number %>" style="cursor: pointer;">
-				<p class="skiplink small default">Kommentare</p>
+				<div class="one columns commentToggler"
+					id="commentToggler-<%= number %>" style="cursor: pointer;">
+					<p class="skiplink small default">Kommentare</p>
 				</div>
 			</div>
 			<div class="row" id="comments-<%= number %>" style="display: none">
-				Kommentare kommen noch
+				<%= comments %>
 			</div>
 			<div class="row" align="right">
 				<p>
@@ -52,4 +53,6 @@
 		</div>
 	</div>
 </div>
-<div class="row"><br/></div>
+<div class="row">
+	<br />
+</div>

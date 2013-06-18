@@ -22,12 +22,8 @@ function emitStoriesInStates(doc, states) {
 				if (states.indexOf(status) > -1) {
 					item = doc.result.projects[0].backlogItems[idx];
 					
-					var sprintname;
-					if( sprints[item.sprintID] ) {
-						sprintname = sprints[item.sprintID];
-					} else {
-						sprintname = null;
-					} 
+					var sprintname = getSprintName(item, sprints);
+					var comments = getComments(item);
 					
 					emit(formatNumber(idx, 5), {
 						title : item.name,
@@ -36,10 +32,38 @@ function emitStoriesInStates(doc, states) {
 						complexity : ((item.roughEstimate == -1) ? "<br>"
 								: item.roughEstimate),
 						author : item.creatorID,
-						sprintNumber : sprintname ? sprintname : 'No Sprint'
+						sprintNumber : sprintname ? sprintname : 'No Sprint',
+						comments : comments
 					});
 				}
 			}
 		}
 	}
 }
+
+function getSprintName(item, sprints) {
+	if( sprints[item.sprintID] ) {
+		return sprints[item.sprintID];
+	} else {
+		return null;
+	} 
+}
+
+function getComments(item) {
+//	[{value: "ein Kommentartext", author: "Ein Kommentator"},{value: "zwei Kommentartext", author: "Zwei Kommentator"}];
+	
+	var result = new Object();
+	
+	if(! item.comments) {
+		return null;
+	}
+	for ( var idx in item.comments) {
+		var commentItem = new Object();
+		commentItem["value"] = item.comments[idx].text.replace(/\n/g,'<br \>');
+		commentItem["author"] = item.comments[idx].creatorID;
+		result[idx] = commentItem;
+	}
+	
+	return result;
+
+} 
