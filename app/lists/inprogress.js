@@ -24,7 +24,8 @@ function(head, req) {
       author: row.value.author,
       orderTypeClass : 'dark label',
       orderNumber: row.value.sprintNumber,
-      comments: getCommentsmarkup(row)
+      comments: getCommentsmarkup(row),
+      commentsCount: Object.keys(row.value.comments).length 
     });
     send(itemcode);
     idx++;
