@@ -16,8 +16,6 @@ function(head, req) {
 
   var idx = 1;
   while(row = getRow()) {
-	
-	var commentsmarkup = getCommentsmarkup(row);
 	  
     var itemcode = tmpl(templates.backlogitem, {
       title: row.value.title,
@@ -27,7 +25,8 @@ function(head, req) {
       author: row.value.author,
       orderTypeClass : 'secondary badge',
       orderNumber: idx,
-      comments: commentsmarkup
+      comments: getCommentsmarkup(row),
+      commentsCount: Object.keys(row.value.comments).length 
     });
     send(itemcode);
     idx++;
