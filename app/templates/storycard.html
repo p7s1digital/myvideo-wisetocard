@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
-table.card {table-layout: fixed; border-width:1px; border-style:solid;}
+table.card {position: absolute; top: 500px; table-layout: fixed; border-width:1px; border-style:solid;}
 td.nr-head {width:40px; border-width:0px; border-style:solid; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline; } 
 td.nr {border-width:0px; border-style:solid; font-weight: bold; font-size:x-large; }
 td.title-head {width:280px; border-width:0px; border-style:solid; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline;  }
@@ -12,48 +12,25 @@ td.story {height: 360px; width:450px; border-width:1px; border-style:solid; padd
 td.story div {height: 350px; overflow:hidden;}
 td.add-head {width:80px; border-width:0px; border-style:solid; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline; }
 td.add-cont {border-width:0px; border-style:solid; text-align: center;}
+
+div.card {position: absolute; width: 820px; height: 430px; border-width: 3px; border-style: solid; border-radius: 10px}
+div.cardnumberhead {position: absolute; top: 2px; left: 2px; width: 48px; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline;}
+div.cardtitlehead {position: absolute; top: 2px; left: 50px; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline;}
+div.cardnumber {position: absolute; top: 18px; left: 2px; width: 48px; font-weight: bold; font-size:x-large; text-align:center;}
+div.cardtitle {position: absolute; top: 18px; left: 50px; font-weight: bold; font-size:x-large;}
 </style>
 <title>Story <%= number %>: <%= title %></title>
 </head>
 <body>
-<table class="card">
-  <tr class="explain">
-    <td class="nr-head">Nummer</td>
-    <td class="title-head" colspan="2">Titel</td>
-  </tr>
-  <tr>
-    <td class="nr"><%= number %></td>
-    <td class="title" colspan="2"><%= title %></td>
-  </tr>
-  <tr>
-    <td class="story" colspan="2" rowspan="9"><div><%= description %></div></td>
-    <td class="add-head">Komplexität</td>
-  </tr>
-  <tr>
-    <td class="add-cont"><font size="+1"><b><%= complexity %></b></font></td>
-  </tr>
-  <tr>
-    <td class="add-head">Businessvalue</td>
-  </tr>
-  <tr>
-    <td class="add-cont"><%= businessvalue %></td>
-  </tr>
-  <tr>
-    <td class="add-head">Autor</td>
-  </tr>
-  <tr>
-    <td class="add-cont"><%= author %></td>
-  </tr>
-  <tr>
-    <td class="add-head">Gedruckt</td>
-  </tr>
-  <tr>
-    <td class="add-cont"><%= printed %></td>
-  </tr>
-  <tr>
-    <td class="add-cont">&nbsp;</td>
-  </tr>
-</table>
+
+<div class="card">
+	<div class="cardnumberhead">Nummer</div>
+	<div class="cardtitlehead">Titel</div>
+	<div class="cardnumber"><%= number %></div>
+	<div class="cardtitle"><%= title %></div>
+</div>
+
+
 </body>
 </html>
 
