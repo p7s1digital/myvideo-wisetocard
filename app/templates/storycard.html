@@ -3,21 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
-table.card {position: absolute; top: 500px; table-layout: fixed; border-width:1px; border-style:solid;}
-td.nr-head {width:40px; border-width:0px; border-style:solid; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline; } 
-td.nr {border-width:0px; border-style:solid; font-weight: bold; font-size:x-large; }
-td.title-head {width:280px; border-width:0px; border-style:solid; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline;  }
-td.title {border-width:0px; border-style:solid; font-size:xx-large; font-weight:bold; }
-td.story {height: 360px; width:450px; border-width:1px; border-style:solid; padding:3px; font-size:small; }
-td.story div {height: 350px; overflow:hidden;}
-td.add-head {width:80px; border-width:0px; border-style:solid; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline; }
-td.add-cont {border-width:0px; border-style:solid; text-align: center;}
-
-div.card {position: absolute; width: 820px; height: 430px; border-width: 3px; border-style: solid; border-radius: 10px}
-div.cardnumberhead {position: absolute; top: 2px; left: 2px; width: 48px; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline;}
-div.cardtitlehead {position: absolute; top: 2px; left: 50px; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline;}
-div.cardnumber {position: absolute; top: 18px; left: 2px; width: 48px; font-weight: bold; font-size:x-large; text-align:center;}
-div.cardtitle {position: absolute; top: 18px; left: 50px; font-weight: bold; font-size:x-large;}
+div.card {position: absolute; width: 620px; height: 430px; border-width: 3px; border-style: solid; border-radius: 10px}
+div.cardnumberhead {position: absolute; top: 2px; left: 4px; width: 48px; font-variant:small-caps; font-size:small; font-style:bold; text-decoration:underline;}
+div.cardtitlehead {position: absolute; top: 2px; left: 60px; font-variant:small-caps; font-size:small; text-decoration:underline;}
+div.cardnumber {position: absolute; top: 18px; left: 4px; width: 48px; font-weight: bold; font-size:x-large; text-align:center;}
+div.cardtitle {position: absolute; top: 18px; left: 60px; font-weight: bold; font-size:x-large;}
+div.cardstory {position: absolute;top: 50px;left: 0px;width: 500px;height: 370px;padding: 3px;font-size: small;border-top-width: 3px;border-right-width: 3px;border-top-style: outset;border-right-style: outset;}
+div.complexityhead {position: absolute; top: 70px; left: 515px; width: 100px; font-variant:small-caps; font-size:small; text-decoration:underline; text-align:center;}
+div.complexity {position: absolute; top: 90px; left: 515px; width: 100px; font-weight: bold; font-size:large; text-align:center;}
+div.authorhead {position: absolute; top: 130px; left: 515px; width: 100px; font-variant:small-caps; font-size:small; text-decoration:underline; text-align:center;}
+div.author {position: absolute; top: 150px; left: 515px; width: 100px; font-weight: bold; font-size:large; text-align:center;}
+div.printedhead {position: absolute; top: 190px; left: 515px; width: 100px; font-variant:small-caps; font-size:small; text-decoration:underline; text-align:center;}
+div.printed {position: absolute; top: 210px; left: 515px; width: 100px; font-weight: bold; font-size:large; text-align:center;}
 </style>
 <title>Story <%= number %>: <%= title %></title>
 </head>
@@ -28,9 +25,14 @@ div.cardtitle {position: absolute; top: 18px; left: 50px; font-weight: bold; fon
 	<div class="cardtitlehead">Titel</div>
 	<div class="cardnumber"><%= number %></div>
 	<div class="cardtitle"><%= title %></div>
+	<div class="cardstory"><%= description %></div>
+	<div class="complexityhead">Komplexität</div>
+	<div class="complexity"><%= complexity %></div>
+	<div class="authorhead">Autor</div>
+	<div class="author"><%= author %></div>	
+	<div class="printedhead">Gedruckt am</div>
+	<div class="printed"><%= printed %></div>
 </div>
-
-
 </body>
 </html>
 
