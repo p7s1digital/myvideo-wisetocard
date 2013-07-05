@@ -2,7 +2,9 @@ function(head, req) {
   // !json templates.headtemplate
   // !json templates.backlogitem
   // !json templates.foottemplate
+  // !json templates.comment
   // !code vendor/couchapp/template.js
+  // !code vendor/scripts/utils.js
 
   var row;
   
@@ -35,18 +37,4 @@ function(head, req) {
   send(templates.foottemplate);
 }
 
-function getCommentsmarkup(row) {
-	  // !json templates.comment
-	  // !code vendor/couchapp/template.js
-		
-		var result = '';
-		
-		for (var idx in row.value.comments) {
-			result = result + tmpl(templates.comment,{
-				value : row.value.comments[idx].value,
-				author: row.value.comments[idx].author
-			});
-		}
-		
-		return result;
-}
+

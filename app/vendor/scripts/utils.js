@@ -66,4 +66,19 @@ function getComments(item) {
 	
 	return result;
 
-} 
+}
+
+
+function getCommentsmarkup(row) {
+		
+		var result = '';
+		
+		for (var idx in row.value.comments) {
+			result = result + tmpl(templates.comment,{
+				value : row.value.comments[idx].value,
+				author: row.value.comments[idx].author
+			});
+		}
+		
+		return result;
+}
