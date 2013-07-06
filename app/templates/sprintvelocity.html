@@ -1,0 +1,41 @@
+<script type="text/javascript">
+$(function() {
+	var options = {
+		    series: {
+		        lines: { show: true },
+		        points: { show: true }
+		    },
+		    yaxis: {
+		        show: true,
+		        min: 0
+		    },
+		    xaxis: {
+		    	show: true,
+		    	tickSize: 1,
+		    	tickDecimals: 0,
+		    	tickFormatter: function (v, a) { return "Sprint " + v; }
+		    }
+		};
+	var data = <%= graphdimension %>;
+	$.plot("#graph-placeholder", [ data ], options);
+});
+</script>
+	
+<div class="row">
+	<div class="one columns">&nbsp;</div>
+	<div class="ten columns">
+		<div class="row">
+			<h3>Projekt-Velocity</h3>
+		</div>
+		<div class="row"><br/></div>
+		<div class="row">
+			<div id="graph-placeholder"
+				style="width: 100%; height: 300px; font-size: 14px; line-height: 1.2em;"></div>
+		</div>
+		<div class="row"><br/></div>
+		<div class="row">
+			Dieser Chart stellt die Komplexitätspunkte der je Sprint abgeschlossenen User Stories dar. Für den letzten Sprint handelt es sich um die geplanten Punkte, da kann sich also noch etwas ändern.
+		</div>
+	</div>
+	<div class="one columns">&nbsp;</div>
+</div>
