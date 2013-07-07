@@ -1,5 +1,7 @@
 function(keys, values, rereduce) {
 	if(!rereduce) {
-		return sum(values);
+		var result = new Object();
+		result["complexity"] = sum(values);
+		return result;
 	}
 }

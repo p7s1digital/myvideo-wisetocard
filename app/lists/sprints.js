@@ -22,7 +22,7 @@ function(head, req) {
 			arrStr += ",";
 		}
 		idx++;
-		arrStr += "[" + parseInt(row.key) + "," + row.value + "]";
+		arrStr += "[" + parseInt(row.key) + "," + row.value.complexity + "]";
 	}
 	arrStr += "]";
 	
