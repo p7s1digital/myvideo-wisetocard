@@ -14,6 +14,19 @@ $(document).ready(function() {
 		$(this).parent().next('div:first').slideToggle("fast");
 	});
 });
+
+function showTooltip(x, y, contents) {
+	$("<div id='tooltip'>" + contents + "</div>").css({
+		position: "absolute",
+		display: "none",
+		top: y + 5,
+		left: x + 5,
+		border: "1px solid #e7e7e7",
+		padding: "2px",
+		"background-color": "#f2f2f2",
+		opacity: 0.80
+	}).appendTo("body").fadeIn(200);
+}
 </script>
 
 </head>

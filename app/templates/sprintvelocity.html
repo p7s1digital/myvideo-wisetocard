@@ -9,6 +9,9 @@
 					show : true
 				}
 			},
+			grid: {
+				hoverable: true
+			},
 			xaxes: [ 
 			         { position: "bottom",
 			           tickSize: 1,
@@ -47,7 +50,9 @@
 					data: <%= countDimension %>
 					}
 				};
-				
+		
+
+		
 		var choiceContainer = $("#choices");
 		choiceContainer.find("input").click(plotAccordingToChoices);
 
@@ -63,6 +68,29 @@
 			$.plot("#graph-placeholder", dataToPlot ,options);
 		}
 		
+		$("#graph-placeholder").bind("plothover", function (event, pos, item) {
+
+			var str = "(" + pos.x.toFixed(2) + ", " + pos.y.toFixed(2) + ")";
+			$("#hoverdata").text(str);
+
+			if (item) {
+				if (previousPoint != item.dataIndex) {
+
+					previousPoint = item.dataIndex;
+
+					$("#tooltip").remove();
+					var x = item.datapoint[0].toFixed(0),
+					y = item.datapoint[1].toFixed(0);
+
+					showTooltip(item.pageX, item.pageY,
+					    item.series.label + " in Sprint " + x + " = " + y);
+				}
+			} else {
+				$("#tooltip").remove();
+				previousPoint = null;            
+			}
+		});		
+		
 		plotAccordingToChoices();
 	});
 </script>
@@ -77,7 +105,7 @@
 	<div class="ten columns">
 
 			<div id="graph-placeholder"
-				style="width: 100%; height: 300px; font-size: 14px; line-height: 1.2em;"></div>
+				style="width: 100%; height: 400px; font-size: 14px; line-height: 1.2em;"></div>
 	</div>
 	<div class="two columns" id="choices">
 		<p class="small" style="font-size:small">
@@ -93,5 +121,5 @@
 <div class="row">
 	<br />
 </div>
-<div class="row">Dieses Chart stellt die Komplexitätspunkte der je Sprint abgeschlossenen User Stories dar. Für den letzten Sprint handelt es sich um die geplanten Punkte, da kann sich also noch etwas ändern.
+<div class="row">Für den letzten Sprint handelt es sich um geplante Werte, da kann sich also noch etwas ändern.
 </div>
