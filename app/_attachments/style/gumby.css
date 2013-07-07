@@ -151,7 +151,7 @@ abbr { text-transform: none; }
  ==================================================*/
 /*.container { padding: 0px $gutter-in-px;
 }*/
-.row { width: 100%; max-width: 940px; min-width: 320px; margin: 0 auto; }
+.row { width: 100%; max-width: 1040px; min-width: 320px; margin: 0 auto; }
 @media only screen and (max-width: 960px) { .row { padding: 0 20px; } }
 .row .row { min-width: 0px; }
 @media only screen and (max-width: 960px) { .row .row { padding: 0; } }
