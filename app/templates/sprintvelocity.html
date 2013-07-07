@@ -1,41 +1,83 @@
 <script type="text/javascript">
-$(function() {
-	var options = {
-		    series: {
-		        lines: { show: true },
-		        points: { show: true }
-		    },
-		    yaxis: {
-		        show: true,
-		        min: 0
-		    },
-		    xaxis: {
-		    	show: true,
-		    	tickSize: 1,
-		    	tickDecimals: 0,
-		    	tickFormatter: function (v, a) { return "Sprint " + v; }
-		    }
+	$(function() {
+		var options = {
+			series : {
+				lines : {
+					show : true
+				},
+				points : {
+					show : true
+				}
+			},
+			yaxis : {
+				show : true,
+				min : 0
+			},
+			xaxis : {
+				show : true,
+				tickSize : 1,
+				tickDecimals : 0,
+				tickFormatter : function(v, a) {
+					return "Sprint " + v;
+				}
+			}
 		};
-	var data = <%= graphdimension %>;
-	$.plot("#graph-placeholder", [ data ], options);
-});
+
+		var datasets = {
+				"complexityGraph": {
+					label: "Komplexitätspunkte",
+					color: 3,
+					data: <%= complexityDimension %>
+				},
+				"countGraph": {
+					label: "Anzahl Stories",
+					color: 1,
+					data: <%= countDimension %>
+					}
+				};
+				
+		var choiceContainer = $("#choices");
+		choiceContainer.find("input").click(plotAccordingToChoices);
+
+		function plotAccordingToChoices() {
+			var dataToPlot = [];
+			choiceContainer.find("input:checked").each(function () {
+				var key = $(this).attr("name");
+				if (key && datasets[key]) {
+					dataToPlot.push(datasets[key]);
+				}
+			});
+			
+			$.plot("#graph-placeholder", dataToPlot ,options);
+		}
+		
+		plotAccordingToChoices();
+	});
 </script>
-	
+
 <div class="row">
-	<div class="one columns">&nbsp;</div>
+	<h3>Projekt-Velocity</h3>
+</div>
+<div class="row">
+	<br />
+</div>
+<div class="row">
 	<div class="ten columns">
-		<div class="row">
-			<h3>Projekt-Velocity</h3>
-		</div>
-		<div class="row"><br/></div>
-		<div class="row">
+
 			<div id="graph-placeholder"
 				style="width: 100%; height: 300px; font-size: 14px; line-height: 1.2em;"></div>
-		</div>
-		<div class="row"><br/></div>
-		<div class="row">
-			Dieser Chart stellt die Komplexitätspunkte der je Sprint abgeschlossenen User Stories dar. Für den letzten Sprint handelt es sich um die geplanten Punkte, da kann sich also noch etwas ändern.
-		</div>
 	</div>
-	<div class="one columns">&nbsp;</div>
+	<div class="two columns" id="choices">
+		<br /> 
+		<input type="checkbox" name="complexityGraph" checked="checked" id="idcomplexityGraphCheck"></input> 
+		<label for="idcomplexityGraphCheck">Komplexität</label>
+		<br />
+		<input type="checkbox" name="countGraph" checked="checked" id="countGraphCheck"></input> 
+		<label for="countGraphCheck">Anzahl Stories</label>
+	</div>
+</div>
+<div class="row">
+	<br />
+</div>
+<div class="row">Dieses Chart stellt die Komplexitätspunkte der je Sprint abgeschlossenen User Stories dar. Für den letzten Sprint handelt es sich um die geplanten Punkte, da kann sich also noch etwas ändern.
 </div>

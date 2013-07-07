@@ -16,18 +16,23 @@ function(head, req) {
 	// is prepared in here and passed to the template
 	var row;
 	var idx = 1;
-	var arrStr = "[";
+	var complexityString = "[";
+	var countString = "[";
 	while(row = getRow()) {
 		if (idx > 1) {
-			arrStr += ",";
+			complexityString += ",";
+			countString += ",";
 		}
 		idx++;
-		arrStr += "[" + parseInt(row.key) + "," + row.value.complexity + "]";
+		complexityString += "[" + parseInt(row.key) + "," + row.value.complexity + "]";
+		countString += "[" + parseInt(row.key) + "," + row.value.count + "]";
 	}
-	arrStr += "]";
+	complexityString += "]";
+	countString += "]";
 	
 	var bodymarkup = tmpl(templates.sprintvelocity, {
-		graphdimension: arrStr
+		complexityDimension: complexityString,
+		countDimension: countString
 	});
 	
 	send(bodymarkup);
