@@ -7,6 +7,7 @@ Installation CouchApp
 
 This is an out of the box couchapp development, so prepending you have couchapp installed, just type
 
+    cd [path_to_project]/app
     couchapp push wisetocard
 
 To deploy the app to your local couch db.
@@ -37,9 +38,8 @@ or make this run as a cronjob, i.e. each 10 minutes
 Usage
 -----
 Open a browser and put this into your addressbox
-    http://127.0.0.1:5984/wisetocard/_design/wisetocard/_show/storycard/data?item=1
-Of course you will have to replace the Host and the item.
-The item number can be found in the scrumwise gui of the backlog items
+    http://127.0.0.1:5984/wisetocard/_design/wisetocard/_list/backlog/backlog
+Of course you will have to replace the Host.
 
 
 Maintain Users
