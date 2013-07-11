@@ -21,7 +21,7 @@ function(doc, req) {
       return tmpl(templates.storycard,{
         number: item.itemNumber,
         title: item.name,
-        description: item.description.replace(/\n/g,'<br \>'),
+        description: item.description ? item.description.replace(/\n/g,'<br \>') : 'TBD',
         author: item.creatorID,
         complexity: ((item.roughEstimate == -1) ? "<br>" : item.roughEstimate),
         businessvalue: "<br>",

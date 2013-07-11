@@ -27,7 +27,7 @@ function emitStoriesInStates(doc, states) {
 					
 					emit(formatNumber(idx, 5), {
 						title : item.name,
-						description : item.description.replace(/\n/g,'<br \>'),
+						description : item.description ? item.description.replace(/\n/g,'<br \>') : 'TBD',
 						number : item.itemNumber,
 						complexity : ((item.roughEstimate == -1) ? "<br>"
 								: item.roughEstimate),
