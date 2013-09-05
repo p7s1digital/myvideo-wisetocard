@@ -1,1 +1,1 @@
-{"env":{"staging":{"db":"http:\/\/user:password@127.0.0.1:5984\/staging"},"default":{"db":"http:\/\/127.0.0.1:5984\/wisetocard"},"production":{"db":"http:\/\/dcp-tools-01:5984\/wisetocard"}}}
+{"env":{"staging":{"db":"http:\/\/172.23.100.199:5984\/wisetocard"},"default":{"db":"http:\/\/127.0.0.1:5984\/wisetocard"},"production":{"db":"http:\/\/dcp-tools-01:5984\/wisetocard"}}}

@@ -15,7 +15,7 @@ function(doc) {
 				var sprintname = getSprintName(item, sprints);
 				
 				if (sprintname) {
-					emit(sprintname.substring(7),  (item.roughEstimate == -1) ? 0 : item.roughEstimate);
+					emit(sprintname.substring(7),  (item.estimate == -1) ? 0 : item.estimate);
 				}
 			}
 		}

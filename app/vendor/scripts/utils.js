@@ -29,8 +29,8 @@ function emitStoriesInStates(doc, states) {
 						title : item.name,
 						description : item.description ? item.description.replace(/\n/g,'<br \>') : 'TBD',
 						number : item.itemNumber,
-						complexity : ((item.roughEstimate == -1) ? "<br>"
-								: item.roughEstimate),
+						complexity : ((item.estimate == -1) ? "<br>"
+								: item.estimate),
 						author : item.creatorID,
 						sprintNumber : sprintname ? sprintname : 'No Sprint',
 						comments : comments
