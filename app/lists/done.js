@@ -27,7 +27,8 @@ function(head, req) {
       orderTypeClass : 'dark label',
       orderNumber: row.value.sprintNumber,
       comments : getCommentsmarkup(row),
-      commentsCount: row.value.comments ? Object.keys(row.value.comments).length : 0 
+      commentsCount: row.value.comments ? Object.keys(row.value.comments).length : 0,
+      team : row.value.teamName 
     });
     send(itemcode);
     idx++;

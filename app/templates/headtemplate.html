@@ -43,7 +43,16 @@ function showTooltip(x, y, contents) {
 			<ul class="ten columns">
 				<li><a href="../done/done">Done</a></li>
 				<li><a href="../inprogress/inprogress">In Progress</a></li>
-				<li><a href="../backlog/backlog">Backlog</a></li>
+				<li>
+					<a href="../backlog/backlog">Backlog</a>
+					<div class="dropdown">
+						<ul>
+							<li><a href="../backlog/backlog?team=Old%20Republic">Old Republic</a></li>
+							<li><a href="../backlog/backlog?team=Beta%20Team">Beta Team</a></li>
+							<li><a href="../backlog/backlog?team=Unchained">Unchained</a></li>
+						</ul>
+					</div>
+				</li>
 				<li><a href="../sprints/sprints?group_level=1">Velocity</a>
 			</ul>
 		</div>
