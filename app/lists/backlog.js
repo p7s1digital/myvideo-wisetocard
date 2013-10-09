@@ -28,7 +28,8 @@ function(head, req) {
       orderTypeClass : 'secondary badge',
       orderNumber: idx,
       comments: getCommentsmarkup(row),
-      commentsCount: row.value.comments ? Object.keys(row.value.comments).length : 0 
+      commentsCount: row.value.comments ? Object.keys(row.value.comments).length : 0,
+      team : row.value.teamName
     });
     send(itemcode);
     idx++;

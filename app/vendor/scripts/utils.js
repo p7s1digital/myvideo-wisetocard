@@ -9,10 +9,19 @@ function formatNumber(num, length) {
 function emitStoriesInStates(doc, states) {
 	if (doc._id == "data") {
 		var sprints = new Object();
-		
 		if (doc.result.projects[0].sprints) {
 			for(var idx in doc.result.projects[0].sprints) {
 				sprints[doc.result.projects[0].sprints[idx].id] = doc.result.projects[0].sprints[idx].name;
+			}
+		}
+		
+		var teams = new Object();
+		if (doc.result.projects[0].tags) {
+			var validNames  = ["Beta Team", "Unchained", "Old Republic"];
+			for ( var idx in doc.result.projects[0].tags) {
+				if (validNames.indexOf(doc.result.projects[0].tags[idx].name) > -1) {
+					teams[doc.result.projects[0].tags[idx].id] = doc.result.projects[0].tags[idx].name;
+				}
 			}
 		}
 		
@@ -24,9 +33,11 @@ function emitStoriesInStates(doc, states) {
 					
 					var sprintname = getSprintName(item, sprints);
 					var comments = getComments(item);
+					var teamName = getTeamName(item, teams);
 					
 					emit(formatNumber(idx, 5), {
 						title : item.name,
+						teamName : teamName,
 						description : item.description ? item.description.replace(/\n/g,'<br \>') : 'TBD',
 						number : item.itemNumber,
 						complexity : ((item.estimate == -1) ? "<br>"
@@ -41,6 +52,17 @@ function emitStoriesInStates(doc, states) {
 	}
 }
 
+function getTeamName(item, teams) {
+	var result; 
+	for ( var idx in item.tagIDs ) {
+		if (teams[item.tagIDs[idx]]) {
+			result = teams[item.tagIDs[idx]];
+			break;
+		}
+	}
+	return result;
+}
+
 function getSprintName(item, sprints) {
 	if( sprints[item.sprintID] ) {
 		return sprints[item.sprintID];
@@ -49,9 +71,8 @@ function getSprintName(item, sprints) {
 	} 
 }
 
+
 function getComments(item) {
-//	[{value: "ein Kommentartext", author: "Ein Kommentator"},{value: "zwei Kommentartext", author: "Zwei Kommentator"}];
-	
 	var result = new Object();
 	
 	if(! item.comments) {
