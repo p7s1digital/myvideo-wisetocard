@@ -17,7 +17,7 @@ function emitStoriesInStates(doc, states) {
 		
 		var teams = new Object();
 		if (doc.result.projects[0].tags) {
-			var validNames  = ["Beta Team", "Unchained", "Old Republic"];
+			var validNames  = ["Beta Team", "Unchained", "Old Republic", "Datacenter"];
 			for ( var idx in doc.result.projects[0].tags) {
 				if (validNames.indexOf(doc.result.projects[0].tags[idx].name) > -1) {
 					teams[doc.result.projects[0].tags[idx].id] = doc.result.projects[0].tags[idx].name;
