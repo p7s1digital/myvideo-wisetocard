@@ -16,6 +16,8 @@ div.authorhead {position: absolute; top: 130px; left: 465px; width: 100px; font-
 div.author {position: absolute; top: 150px; left: 465px; width: 100px; font-weight: bold; font-size:large; text-align:center;}
 div.printedhead {position: absolute; top: 190px; left: 465px; width: 100px; font-variant:small-caps; font-size:small; text-decoration:underline; text-align:center;}
 div.printed {position: absolute; top: 210px; left: 465px; width: 100px; font-weight: bold; font-size:large; text-align:center;}
+div.storytypehead {position: absolute; top: 250px; left: 465px; width: 100px; font-variant:small-caps; font-size:small; text-decoration:underline; text-align:center;}
+div.storytype {position: absolute; top: 270px; left: 465px; width: 100px; font-weight: bold; font-size:large; text-align:center;}
 div.logo {position: absolute; top: 380px; left: 465px; width: 100px;text-align:center;}
 </style>
 <title>Story <%= number %>: <%= title %></title>
@@ -33,7 +35,9 @@ div.logo {position: absolute; top: 380px; left: 465px; width: 100px;text-align:c
 	<div class="authorhead">Autor</div>
 	<div class="author"><%= author %></div>	
 	<div class="printedhead">Gedruckt am</div>
-	<div class="printed"><%= printed %></div>
+	<div class="printed"><%= printed %></div>	
+	<div class="storytypehead">Typ</div>
+	<div class="storytype"><%= storyType %></div>
 	<div class="logo"><img align="middle" src="../../pictures/logo.png" /></div>
 </div>
 
